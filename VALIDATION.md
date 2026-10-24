@@ -1,5 +1,8 @@
 # Validation record — 2026-10-24
 
+> **Post-packaging record (25 October 2026):** Repository was published and a LangChain bounty claim email sent on 24 October at 20:57 UTC. The claim includes transaction hash `0x173e4ebb03d13e4ba5e14a4c4f1d63724a397981bfc0bcff898cb917ce513476`; the chain receipt/USDC transfer are **not independently verified** here. This file otherwise preserves the 24 October pre-submission test snapshot; its statements about "not yet submitted" describe that earlier time. No organizer review or payout confirmed.
+
+
 Packaging-time snapshot (24 October 2026): private local integration, not yet submitted or published. No private key was read, requested, exported, or stored. No wallet signature or paid call was made.
 
 Executed with bundled Node v24.19.0:
