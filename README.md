@@ -1,5 +1,10 @@
 # Blockchain IQ brief tool for LangChain.js
 
+## Submission status update — 24–25 October 2026
+
+The repository is now public. A LangChain.js claim was **sent** to `partnerships@blockchainiq.co` on **24 October 2026 at 20:57 UTC**, listing a purported Base settlement transaction: [`0x173e4ebb03d13e4ba5e14a4c4f1d63724a397981bfc0bcff898cb917ce513476`](https://basescan.org/tx/0x173e4ebb03d13e4ba5e14a4c4f1d63724a397981bfc0bcff898cb917ce513476). This is a *submission record*, **not independently verified on-chain proof**. The transaction receipt/token transfer could not be independently checked here. As of 25 October, no maintainer acceptance or payout has been confirmed. The older "pre-submission" and "still needed" passages below are explicitly **historical packaging-time snapshots**; do not read them as present-day status. The maintainer should independently verify the transaction and run the integration before awarding anything.
+
+
 Original integration by ProMartY, assisted by Codex. Original source is released under the MIT license.
 
 A real LangChain `StructuredTool` that requests the Blockchain IQ `/brief` resource through the x402 v2 handshake. The SDK creates an EIP-3009 USDC authorization using an injected wallet callback. The package never accepts, reads, stores, or requests a private key.
