@@ -1,19 +1,26 @@
 # Blockchain IQ brief tool for LangChain.js
 
-## Submission status update — 24–25 October 2026
+## Status — 27 October 2026
 
-The repository is now public. A LangChain.js claim was **sent** to `partnerships@blockchainiq.co` on **24 October 2026 at 20:57 UTC**, listing a purported Base settlement transaction: [`0x173e4ebb03d13e4ba5e14a4c4f1d63724a397981bfc0bcff898cb917ce513476`](https://basescan.org/tx/0x173e4ebb03d13e4ba5e14a4c4f1d63724a397981bfc0bcff898cb917ce513476). This is a *submission record*, **not independently verified on-chain proof**. The transaction receipt/token transfer could not be independently checked here. As of 25 October, no maintainer acceptance or payout has been confirmed. The older "pre-submission" and "still needed" passages below are explicitly **historical packaging-time snapshots**; do not read them as present-day status. The maintainer should independently verify the transaction and run the integration before awarding anything.
+Published prerelease **[0.1.0-rc.3](https://www.npmjs.com/package/blockchainiq-langchain-brief/v/0.1.0-rc.3)**; release tag: `next`. Independently maintained by ProMartY (npm account `promarty`). No official framework catalogue listing or endorsement is claimed.
 
+Blockchain IQ's [public build-bounty results](https://www.blockchainiq.co/blog/x402-integrations-from-the-build-bounty) identify ProMartY as the LangChain winner ($150), at reviewed commit `b2bbe864`, and report payment on 27 October 2026. The organizer verified mechanics; this was **not a security audit or endorsement**. This release contains later packaging changes. No fresh paid request or independent chain verification was performed for this release.
 
-Original integration by ProMartY, assisted by Codex. Original source is released under the MIT license.
+Original JavaScript ESM integration by ProMartY, assisted by Codex, under MIT. Dependencies and paid research retain their own licenses and terms.
 
 A real LangChain `StructuredTool` that requests the Blockchain IQ `/brief` resource through the x402 v2 handshake. The SDK creates an EIP-3009 USDC authorization using an injected wallet callback. The package never accepts, reads, stores, or requests a private key.
 
-**Status at packaging time (24 October 2026):** private pre-submission integration. Offline smoke and tests pass. The public unpaid endpoint has been checked. **No real payment, settlement, live paid brief, or bounty qualification has been completed.**
-
 ## Quick start
 
-Node.js 22 or later; validated with Node 24.19.0. Install the locked dependencies without lifecycle scripts:
+Node.js 22 or later; validated with Node 24.19.0 and npm 11.17.0. Install the published prerelease explicitly:
+
+```sh
+npm install --ignore-scripts blockchainiq-langchain-brief@next
+# Reproducible version pin:
+npm install --ignore-scripts blockchainiq-langchain-brief@0.1.0-rc.3
+```
+
+For a source checkout, install the locked dependencies without lifecycle scripts:
 
 ```sh
 npm ci --ignore-scripts
@@ -39,7 +46,7 @@ Only this resource and payment route are accepted:
 | Per-call and client-lifetime maximum | `10000` six-decimal USDC units = 0.01 USDC |
 | Authorization expiry | at most 300 seconds |
 
-The current quote is exactly `10000` units. A lower positive amount is permitted; a higher amount is rejected. Multiple payment choices, other chains/tokens/recipients, Permit2/approval extras, nonmatching resources, and redirects are rejected before the wallet callback. Untrusted quote extensions are stripped before the SDK sees the request.
+The quote at the reviewed bounty snapshot was `10000` units; this is not a fresh live quote. A lower positive amount is permitted; a higher amount is rejected. Multiple payment choices, other chains/tokens/recipients, Permit2/approval extras, nonmatching resources, and redirects are rejected before the wallet callback. Untrusted quote extensions are stripped before the SDK sees the request.
 
 The payment flag is an application option, not a tool argument. The strict tool input is `{}`; the model cannot choose a URL, recipient, price, or signer. One client instance can authorize at most once. The budget is reserved **before** wallet interaction to prevent simultaneous runs from signing twice. Errors, cancellation, timeout, and missing receipts do not restore it. There is one signed retry and no automatic retry after a second 402, HTTP error, or network failure. Reconcile uncertain transactions before creating a newly approved client.
 
@@ -52,7 +59,7 @@ import {
   createBlockchainIqBriefTool,
   createSdkPaymentAdapter,
   toRpcTypedData,
-} from './src/index.js';
+} from 'blockchainiq-langchain-brief';
 
 // walletAddress is a public address; signTypedData is supplied by a trusted
 // owner-controlled wallet bridge. No secret key is passed to this process.
@@ -104,7 +111,7 @@ For applications that need a plain object, `createBriefClient(options)` exposes:
 
 A live smoke necessarily spends real funds and signs an authorization. Payment is disabled by default. It must be initiated and approved by the owner through an injected wallet UI; no agent should read or export the wallet's private key. A clean reviewer environment can inject its own throwaway wallet callback through the same interface.
 
-The included loopback-only MetaMask bridge provides a complete reviewer path:
+The source checkout includes an optional loopback-only MetaMask bridge. The npm archive excludes this helper, tests, and synthetic wallet fixtures. These commands are for a separately approved owner session:
 
 ```sh
 # Preview only; no wallet connection or payment can start.
@@ -119,12 +126,6 @@ Optional `--payer=0x...` pins a specific owner/reviewer address. `--port=43818` 
 
 After an approved successful live run, retain only the settlement transaction hash and necessary submission evidence. Do not place the paid response, signature, wallet secrets, or local session data in a public repository. The API content remains subject to its own [terms](https://www.blockchainiq.co/terms).
 
-## Bounty acceptance still outstanding
-
-The [official round](https://www.blockchainiq.co/blog/x402-build-bounties) requires a public repository, a real paid call **made by the integration**, and an email submission with the framework, settlement transaction hash, credit handle, and Base payout address. A maintainer reruns the integration in a clean isolated environment with a throwaway wallet. Offline mocks, a catalogue request, or an unpaid 402 do not satisfy that requirement.
-
-The first passing integration is advertised at $150; the other three at $125, with one pass per framework. Claims are reviewed in received order, so the LangChain slot and award are not reserved by this local work. The stated payment timing is USDC on Base within three days **after passing**. No review response deadline was found; receiving money by October 31 is unconfirmed. Publication, any payment, wallet signing, and submission require separate owner authorization.
-
 ## Why the SDK handshake is explicit
 
 The package uses `x402Client` and receipt decoding from `@x402/fetch`, `ExactEvmScheme` from `@x402/evm`, and header helpers from `@x402/core`. It deliberately performs the two HTTP requests explicitly instead of a generic automatic fetch wrapper. This lets the fixed endpoint, challenge policy, lifetime budget, callback guards, cancellation, and one-retry limit be enforced around the real SDK payload generation.
@@ -134,3 +135,19 @@ Pinned versions: `@langchain/core` 1.3.0; `@x402/core`, `@x402/evm`, and `@x402/
 Primary references: [official API catalogue](https://www.blockchainiq.co/api/x402/v1), [Blockchain IQ x402 explanation](https://www.blockchainiq.co/blog/pay-per-call-crypto-data-x402), [LangChain tools](https://docs.langchain.com/oss/javascript/langchain/tools), [x402 EVM signer interface](https://github.com/x402-foundation/x402/blob/main/typescript/packages/mechanisms/evm/src/signer.ts).
 
 Original adapter source: MIT. Third-party dependencies and Blockchain IQ content retain their respective licenses and terms.
+
+## npm distribution and external listing
+
+For source development, use the checkout and its lockfile. npm package: `blockchainiq-langchain-brief`; prerelease tag: `next`. Listing acceptance is a maintainer decision, not guaranteed.
+
+The [LangChain guide](https://docs.langchain.com/oss/python/contributing/publish-langchain) requires an Integration listing issue after npm publication. Request an external documentation listing using this README. Hosted guides require 50,000 monthly downloads or a maintainer's featured decision. The form labels the JavaScript/npm ecosystem **TypeScript**; this is JavaScript ESM, not a Python package. A listing submission is a request for maintainer review, not acceptance in the catalogue.
+
+For npm consumers, follow [INSTALL.md](INSTALL.md). RC3 includes transparent local dependency forks and requires no manual root overrides. These are independent local variants, not official upstream SDK/runtime releases; see [vendor/provenance.json](vendor/provenance.json) and [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
+
+## RC3 dependency distribution
+
+The SDK runtime is based on x402 2.28.0 under distinct `@blockchainiq-local/*` names. Zod is the official 4.6.7 release. The integration's payment guards are unchanged apart from import module names. Forks and their transitive dependencies remain visible in package-lock/SBOM/audit evidence. The official LangChain 1.3.0 dependency is unchanged.
+
+The public repository runtime, manifest and vendored tarballs match the published RC3. This README, installation guide and attribution notice contain later documentation clarifications; the immutable npm archive is unchanged. See [release validation](docs/RC3-VALIDATION.md).
+
+This is a larger archive because it includes reviewed fork distributions, source/provenance and required dependencies. Third-party code retains its licenses. Review [INSTALL.md](INSTALL.md) and the source release records before enabling any wallet callback.

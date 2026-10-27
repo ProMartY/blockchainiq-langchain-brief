@@ -1,0 +1,80 @@
+{
+  "package": "blockchainiq-langchain-brief",
+  "version": "0.1.0-rc.3",
+  "tag": "next",
+  "npmUrl": "https://www.npmjs.com/package/blockchainiq-langchain-brief/v/0.1.0-rc.3",
+  "publishedAtUtc": "2026-10-27T17:43:51.512Z",
+  "tarball": "https://registry.npmjs.org/blockchainiq-langchain-brief/-/blockchainiq-langchain-brief-0.1.0-rc.3.tgz",
+  "sha256": "21dba2caa66f37b1d8f7a5ca7e5028a4317fc7ef6cb4fd2173ecd4042ef4ec9e",
+  "integrity": "sha512-OpT0GtO+FWO5es7PEFTSF9N0lwaKWTMETD08+Cw2XYOsQPNXK7XkLQ4YJpWn6KK9m57ZHa72ubGeQrlZYxp4EQ==",
+  "baseBountyCommit": "b2bbe864bb7872a7c58f6d0cce7fc796eda2ce6e",
+  "publishedFiles": [
+    {
+      "path": "LICENSE",
+      "size": 1065,
+      "owner": "integration",
+      "sha256": "d47670f22788859f0a7c50257a731e0f10d3c65724a139531612149b24a1c9f8"
+    },
+    {
+      "path": "package.json",
+      "size": 1815,
+      "owner": "integration",
+      "sha256": "e010ced96e3986848906eb11148926565bf3736e56fed5f74ac7fbf0c0b5baf6"
+    },
+    {
+      "path": "src/index.js",
+      "size": 7902,
+      "owner": "integration",
+      "sha256": "f008fa536aea4a1bd357388db86e0cef774483a7fbf3c933548a154fb5a3b1e0"
+    },
+    {
+      "path": "src/policy.js",
+      "size": 3534,
+      "owner": "integration",
+      "sha256": "8cf5de9e5ba05e414cbb66818a2597e7a186cef2ebc550b5ea183c68a1478a07"
+    },
+    {
+      "path": "src/sdk-payment.js",
+      "size": 2333,
+      "owner": "integration",
+      "sha256": "7dfcaf6be44bc6971fcca87b2593a0c8e69cc46c085fa232d45cad37b8745148"
+    },
+    {
+      "path": "THIRD-PARTY-NOTICES.md",
+      "size": 1006,
+      "owner": "integration",
+      "sha256": "0302579f0a47d49061420c2525210153bffd5baa6e30ce1abc79b6d6724dd834"
+    },
+    {
+      "path": "vendor/provenance.json",
+      "size": 4674,
+      "owner": "integration",
+      "sha256": "ad5c8de278dedcf4bf71bbb9c1ec535f17d6b16d370bee9812739e41d7a72817"
+    },
+    {
+      "path": "vendor/tarballs/blockchainiq-local-x402-core-2.28.0-biq.1.tgz",
+      "size": 405814,
+      "owner": "integration",
+      "sha256": "9ed9212f512fda523ed18a7a6d786d4cf87b7f133ced1b42d1c9dcdce995a02e"
+    },
+    {
+      "path": "vendor/tarballs/blockchainiq-local-x402-evm-2.28.0-biq.1.tgz",
+      "size": 938117,
+      "owner": "integration",
+      "sha256": "8414c626fa30b047fe851ba155776e7fffeaf30a0f2e096c46da44b253aef320"
+    },
+    {
+      "path": "vendor/tarballs/blockchainiq-local-x402-fetch-2.28.0-biq.1.tgz",
+      "size": 9925,
+      "owner": "integration",
+      "sha256": "64b3f23ce7679fadbdbb072f38bed94858ac52db7c27220f0e9db1db14ed7523"
+    }
+  ],
+  "documentationChangesAfterPublication": [
+    "README.md",
+    "INSTALL.md",
+    "NOTICE.md",
+    "vendor/README.md"
+  ],
+  "note": "Runtime, package manifest, original license, third-party notices, provenance and vendor tarballs remain identical. Later documentation corrects the obsolete no-bundling sentence in NOTICE; published THIRD-PARTY-NOTICES already described bundled code. No new npm release or tag change."
+}

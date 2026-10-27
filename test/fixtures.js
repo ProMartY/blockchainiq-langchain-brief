@@ -1,4 +1,4 @@
-import { encodePaymentRequiredHeader, encodePaymentResponseHeader } from '@x402/core/http';
+import { encodePaymentRequiredHeader, encodePaymentResponseHeader } from '@blockchainiq-local/x402-core/http';
 import { POLICY } from '../src/policy.js';
 export const ADDRESS = '0x1111111111111111111111111111111111111111';
 export const TRANSACTION = '0x' + 'ab'.repeat(32);

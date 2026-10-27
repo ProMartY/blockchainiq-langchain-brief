@@ -1,7 +1,7 @@
 import { tool } from '@langchain/core/tools';
 import { z } from 'zod';
-import { decodePaymentRequiredHeader, decodePaymentSignatureHeader } from '@x402/core/http';
-import { decodePaymentResponseHeader } from '@x402/fetch';
+import { decodePaymentRequiredHeader, decodePaymentSignatureHeader } from '@blockchainiq-local/x402-core/http';
+import { decodePaymentResponseHeader } from '@blockchainiq-local/x402-fetch';
 import { BriefError, fail, isAddress, isHash, isSignature, POLICY, sameAddress, validatePaymentRequired, validateTypedData } from './policy.js';
 export { POLICY, BriefError } from './policy.js';
 export { createSdkPaymentAdapter, toRpcTypedData } from './sdk-payment.js';

@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { ToolMessage } from '@langchain/core/messages';
-import { decodePaymentSignatureHeader, encodePaymentSignatureHeader } from '@x402/core/http';
+import { decodePaymentSignatureHeader, encodePaymentSignatureHeader } from '@blockchainiq-local/x402-core/http';
 import { createBriefClient, createBlockchainIqBriefTool, createSdkPaymentAdapter, toRpcTypedData, POLICY } from '../src/index.js';
 import { validatePaymentRequired, validateTypedData } from '../src/policy.js';
 import { ADDRESS, CONTENT, SIGNATURE, TRANSACTION, mockTransport, paid, paymentRequired, quote } from './fixtures.js';

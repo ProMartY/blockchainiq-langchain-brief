@@ -9,16 +9,16 @@ import {
   validatePaymentRequired,
   parsePaymentPayload,
   validatePaymentPayload,
-} from '@x402/core/schemas';
-import { decodePaymentSignatureHeader } from '@x402/core/http';
+} from '@blockchainiq-local/x402-core/schemas';
+import { decodePaymentSignatureHeader } from '@blockchainiq-local/x402-core/http';
 import { createSdkPaymentAdapter } from '../src/sdk-payment.js';
 import { quote } from './fixtures.js';
 
 // Public synthetic wallet for offline tests only. Never fund this fixture.
 const account = privateKeyToAccount('0x' + '11'.repeat(32));
-const schemaRequire = createRequire(import.meta.resolve('@x402/core/schemas'));
+const schemaRequire = createRequire(import.meta.resolve('@blockchainiq-local/x402-core/schemas'));
 
-test('the public x402 schema exports resolve the explicitly scoped Zod 4.6.7 override', () => {
+test('the public x402 schema exports resolve the fork dependency on fixed Zod 4.6.7', () => {
   assert.equal(schemaRequire('zod/package.json').version, '4.6.7');
 });
 

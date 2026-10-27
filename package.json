@@ -1,44 +1,69 @@
 {
   "name": "blockchainiq-langchain-brief",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.0-rc.3",
+  "private": false,
   "type": "module",
-  "description": "Guarded LangChain tool for the Blockchain IQ x402 market brief; private pre-submission build.",
+  "description": "LangChain.js tool for Blockchain IQ market briefs with opt-in, capped x402 payments on Base.",
+  "license": "MIT",
+  "author": "ProMartY",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProMartY/blockchainiq-langchain-brief.git"
+  },
+  "homepage": "https://github.com/ProMartY/blockchainiq-langchain-brief#readme",
+  "bugs": {
+    "url": "https://github.com/ProMartY/blockchainiq-langchain-brief/issues"
+  },
+  "keywords": [
+    "langchain",
+    "langchainjs",
+    "blockchainiq",
+    "x402",
+    "base",
+    "usdc",
+    "tools"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/",
+    "tag": "next"
+  },
+  "main": "./src/index.js",
   "exports": {
     ".": "./src/index.js"
   },
   "files": [
     "src",
-    "scripts",
-    "test",
     "README.md",
-    "VALIDATION.md",
-    "LICENSE"
+    "NOTICE.md",
+    "INSTALL.md",
+    "LICENSE",
+    "vendor/README.md",
+    "vendor/provenance.json",
+    "vendor/tarballs",
+    "THIRD-PARTY-NOTICES.md"
   ],
   "engines": {
     "node": ">=22"
   },
   "scripts": {
-    "test": "node --test",
+    "test": "node --test test/*.test.js",
     "smoke": "node scripts/smoke.js",
     "quote": "node scripts/quote.js",
     "wallet": "node scripts/owner-wallet-server.js",
-    "check": "node --check src/index.js && node --check src/sdk-payment.js && node --test"
+    "check": "node --check src/index.js && node --check src/sdk-payment.js && node --test test/*.test.js"
   },
   "dependencies": {
     "@langchain/core": "1.3.0",
-    "@x402/core": "2.28.0",
-    "@x402/evm": "2.28.0",
-    "@x402/fetch": "2.28.0",
     "viem": "2.57.11",
-    "zod": "4.6.7"
+    "zod": "4.6.7",
+    "@blockchainiq-local/x402-core": "2.28.0-biq.1",
+    "@blockchainiq-local/x402-evm": "2.28.0-biq.1",
+    "@blockchainiq-local/x402-fetch": "2.28.0-biq.1"
   },
-  "overrides": {
-    "@x402/core": {
-      "zod": "4.6.7"
-    },
-    "@x402/evm": {
-      "zod": "4.6.7"
-    }
-  }
+  "bundleDependencies": [
+    "@blockchainiq-local/x402-core",
+    "@blockchainiq-local/x402-evm",
+    "@blockchainiq-local/x402-fetch"
+  ]
 }

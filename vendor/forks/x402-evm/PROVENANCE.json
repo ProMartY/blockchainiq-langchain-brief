@@ -1,0 +1,25 @@
+{
+  "name": "@x402/evm",
+  "version": "2.28.0",
+  "short": "x402-evm",
+  "localName": "@blockchainiq-local/x402-evm",
+  "localVersion": "2.28.0-biq.1",
+  "tarball": "https://registry.npmjs.org/@x402/evm/-/evm-2.28.0.tgz",
+  "integrity": "sha512-BZuoaCKMoPQQuMTa4oibvoyI06WdCpgrzgdicUu8d+5NBMAfWb6LAmSQf1KkeiS8C+25/+2JGB4cHSL0VLGnSA==",
+  "sha256": "31692fe0117ba0868b23a73d9f7b69df9bcf6e6653176cdf8cfd820c9ee063c5",
+  "gitHead": null,
+  "repository": "https://github.com/x402-foundation/x402",
+  "license": "Apache-2.0",
+  "licenseSource": "x402 repository LICENSE (blob identified below)",
+  "modifications": [
+    "Rename package/import identity to local fork namespace",
+    "Require fixed Zod 4.6.7 where applicable",
+    "Retain upstream payment implementation"
+  ],
+  "licenseBlob": {
+    "url": "https://github.com/x402-foundation/x402/blob/main/LICENSE",
+    "blobSha": "b09cd7856d58590578ee1a4f3ad45d1310a97f87",
+    "sha256": "50e6751797c50dedd75ef1b8a0d9e42f5f8472e9fbce91f34718e9f97b0c780a"
+  },
+  "build": "Upstream compiled distribution; import identifiers/dependency metadata changed only"
+}

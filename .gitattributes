@@ -1,0 +1,6 @@
+* text=auto eol=lf
+src/** -text
+vendor/** -text
+package.json -text
+LICENSE -text
+THIRD-PARTY-NOTICES.md -text

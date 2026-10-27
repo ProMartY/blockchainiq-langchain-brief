@@ -1,4 +1,6 @@
 node_modules/
+*.tgz
+!vendor/tarballs/*.tgz
 .env
 .env.*
 !.env.example
@@ -7,3 +9,7 @@ coverage/
 live-response*
 session*
 wallet*
+
+release/
+
+.fork-rebuild/

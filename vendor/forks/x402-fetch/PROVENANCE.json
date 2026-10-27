@@ -1,0 +1,25 @@
+{
+  "name": "@x402/fetch",
+  "version": "2.28.0",
+  "short": "x402-fetch",
+  "localName": "@blockchainiq-local/x402-fetch",
+  "localVersion": "2.28.0-biq.1",
+  "tarball": "https://registry.npmjs.org/@x402/fetch/-/fetch-2.28.0.tgz",
+  "integrity": "sha512-kF5IjZIz/izg2TD/Zav+SVj0jtC0zBDfE7WcKCnMZWIsZcLCyL2GgvwXCn7CCSsNjpQ/z3Rz4OqTCA4AaeKySQ==",
+  "sha256": "47e489eb176b4102d0d0a3d2bc59a00b9c837cccc9fb9fe62a32ca2e2c3cb55a",
+  "gitHead": null,
+  "repository": "https://github.com/x402-foundation/x402",
+  "license": "Apache-2.0",
+  "licenseSource": "x402 repository LICENSE (blob identified below)",
+  "modifications": [
+    "Rename package/import identity to local fork namespace",
+    "Require fixed Zod 4.6.7 where applicable",
+    "Retain upstream payment implementation"
+  ],
+  "licenseBlob": {
+    "url": "https://github.com/x402-foundation/x402/blob/main/LICENSE",
+    "blobSha": "b09cd7856d58590578ee1a4f3ad45d1310a97f87",
+    "sha256": "50e6751797c50dedd75ef1b8a0d9e42f5f8472e9fbce91f34718e9f97b0c780a"
+  },
+  "build": "Upstream compiled distribution; import identifiers/dependency metadata changed only"
+}

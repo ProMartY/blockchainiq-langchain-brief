@@ -1,6 +1,6 @@
-import { x402Client } from '@x402/fetch';
-import { ExactEvmScheme } from '@x402/evm/exact/client';
-import { encodePaymentSignatureHeader } from '@x402/core/http';
+import { x402Client } from '@blockchainiq-local/x402-fetch';
+import { ExactEvmScheme } from '@blockchainiq-local/x402-evm/exact/client';
+import { encodePaymentSignatureHeader } from '@blockchainiq-local/x402-core/http';
 import { BriefError, fail, isAddress, isSignature, POLICY, validatePaymentRequired, validateTypedData } from './policy.js';
 
 /** JSON-RPC eth_signTypedData_v4 params: [address, JSON.stringify(toRpcTypedData(data))]. */

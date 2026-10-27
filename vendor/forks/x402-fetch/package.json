@@ -1,0 +1,54 @@
+{
+  "name": "@blockchainiq-local/x402-fetch",
+  "version": "2.28.0-biq.1",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/index.d.ts",
+  "keywords": [],
+  "license": "Apache-2.0",
+  "author": "x402 Foundation",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ProMartY/blockchainiq-langchain-brief",
+    "directory": "vendor/forks/x402-fetch"
+  },
+  "description": "[LOCAL BLOCKCHAIN IQ FORK; not an upstream release] x402 Payment Protocol Fetch Extension",
+  "devDependencies": {},
+  "dependencies": {
+    "@blockchainiq-local/x402-core": "2.28.0-biq.1"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.mts",
+        "default": "./dist/esm/index.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "LICENSE",
+    "LICENSE.md",
+    "FORK-NOTICE.md",
+    "PROVENANCE.json",
+    "BUILD-METAFILE.json"
+  ],
+  "scripts": {},
+  "private": true,
+  "blockchainIqFork": {
+    "upstream": "@x402/fetch@2.28.0",
+    "upstreamIntegrity": "sha512-kF5IjZIz/izg2TD/Zav+SVj0jtC0zBDfE7WcKCnMZWIsZcLCyL2GgvwXCn7CCSsNjpQ/z3Rz4OqTCA4AaeKySQ==",
+    "upstreamGitHead": null,
+    "maintenance": "ProMartY; local fork included with the integration; not published under the upstream identity",
+    "changes": [
+      "Rename package/import identity to local fork namespace",
+      "Require fixed Zod 4.6.7 where applicable",
+      "Retain upstream payment implementation"
+    ]
+  }
+}

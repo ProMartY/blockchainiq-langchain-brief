@@ -1,0 +1,134 @@
+{
+  "name": "@blockchainiq-local/x402-core",
+  "version": "2.28.0-biq.1",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/cjs/index.d.ts",
+  "keywords": [],
+  "license": "Apache-2.0",
+  "author": "x402 Foundation",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ProMartY/blockchainiq-langchain-brief",
+    "directory": "vendor/forks/x402-core"
+  },
+  "description": "[LOCAL BLOCKCHAIN IQ FORK; not an upstream release] x402 Payment Protocol",
+  "devDependencies": {},
+  "dependencies": {
+    "zod": "4.6.7"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.mts",
+        "default": "./dist/esm/index.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
+    },
+    "./client": {
+      "import": {
+        "types": "./dist/esm/client/index.d.mts",
+        "default": "./dist/esm/client/index.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/client/index.d.ts",
+        "default": "./dist/cjs/client/index.js"
+      }
+    },
+    "./facilitator": {
+      "import": {
+        "types": "./dist/esm/facilitator/index.d.mts",
+        "default": "./dist/esm/facilitator/index.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/facilitator/index.d.ts",
+        "default": "./dist/cjs/facilitator/index.js"
+      }
+    },
+    "./http": {
+      "import": {
+        "types": "./dist/esm/http/index.d.mts",
+        "default": "./dist/esm/http/index.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/http/index.d.ts",
+        "default": "./dist/cjs/http/index.js"
+      }
+    },
+    "./server": {
+      "import": {
+        "types": "./dist/esm/server/index.d.mts",
+        "default": "./dist/esm/server/index.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/server/index.d.ts",
+        "default": "./dist/cjs/server/index.js"
+      }
+    },
+    "./types": {
+      "import": {
+        "types": "./dist/esm/types/index.d.mts",
+        "default": "./dist/esm/types/index.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/types/index.d.ts",
+        "default": "./dist/cjs/types/index.js"
+      }
+    },
+    "./types/v1": {
+      "import": {
+        "types": "./dist/esm/types/v1/index.d.mts",
+        "default": "./dist/esm/types/v1/index.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/types/v1/index.d.ts",
+        "default": "./dist/cjs/types/v1/index.js"
+      }
+    },
+    "./utils": {
+      "import": {
+        "types": "./dist/esm/utils/index.d.mts",
+        "default": "./dist/esm/utils/index.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/utils/index.d.ts",
+        "default": "./dist/cjs/utils/index.js"
+      }
+    },
+    "./schemas": {
+      "import": {
+        "types": "./dist/esm/schemas/index.d.mts",
+        "default": "./dist/esm/schemas/index.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/schemas/index.d.ts",
+        "default": "./dist/cjs/schemas/index.js"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "LICENSE",
+    "LICENSE.md",
+    "FORK-NOTICE.md",
+    "PROVENANCE.json",
+    "BUILD-METAFILE.json"
+  ],
+  "scripts": {},
+  "private": true,
+  "blockchainIqFork": {
+    "upstream": "@x402/core@2.28.0",
+    "upstreamIntegrity": "sha512-Da/7zKxCKqpBoB4Msc9tFgkAv7tJTD8nG+DSSm+QdXAyJS4PQsmgVSKe17rDJTtlu0pwNbLcOje6MyQ6kaDkig==",
+    "upstreamGitHead": null,
+    "maintenance": "ProMartY; local fork included with the integration; not published under the upstream identity",
+    "changes": [
+      "Rename package/import identity to local fork namespace",
+      "Require fixed Zod 4.6.7 where applicable",
+      "Retain upstream payment implementation"
+    ]
+  }
+}
